@@ -37,8 +37,7 @@ This virtual chatbot project showcases my proficiency in utilizing the DOM and i
 ### Prerequisites
 Before you start, make sure you have the following installed:
 
-Node.js (for backend server)
-npm (for package management)
+Node.js (for backend server) and npm (for package management)
 
 ## 1. Clone the repository
 
@@ -49,8 +48,9 @@ cd VirtualChatbot
 
 ## 2. Install dependencies
 
-```shell
 Run the following command to install all the required packages:
+
+```shell
 npm install
 ```
 
