@@ -8,6 +8,7 @@ Welcome to the ChatVerse , a Virtual Chatbot project! This chatbot allows users 
 - **Features**:
   - 📱 **Responsive Design**: Optimized for various devices
   - 🔍 **User-friendly Interface**: For having fruitful conversation
+  - 🤖 **3D-Model**: Integrated Sketchfab 3D robot model directly into the chat interface
  
 #### Back-end 🛠️
 - **Technologies Used**: Node.js, Express.js
@@ -15,10 +16,10 @@ Welcome to the ChatVerse , a Virtual Chatbot project! This chatbot allows users 
   - 🧩 **GEMINI API**: Handles user interactions and response
 
 #### 🚀 Key Features
-- 📸 **Image Upload**
-- 😄 **Conversation Using Emojis**
-- 🔄 **Context-Aware Conversations**
-- 🤖 **3D Model Interaction**
+- 📸 **Image Upload**: Users can upload images during the conversation.
+- 😄 **Conversation Using Emojis**: Communicate with the chatbot in a more fun and expressive way!
+- 🔄 **Context-Aware Conversations**: The chatbot remembers previous responses, allowing for context-based conversations
+- 🤖 **3D Model Interaction**: Integrated Sketchfab 3D models directly into the chat interface
 
 #### Deployment 🚀
 The ChatVerse project has been deployed using Render
@@ -35,6 +36,7 @@ This virtual chatbot project showcases my proficiency in utilizing the DOM and i
 🛠️ **Installation & Setup**
 
 ### Prerequisites
+
 Before you start, make sure you have the following installed:
 
 Node.js (for backend server) and npm (for package management)
