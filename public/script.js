@@ -6,13 +6,11 @@ const fileUploadWrapper = document.querySelector(".file-upload-wrapper")
 const fileCancelButton = document.querySelector("#file-cancel")
 const chatbotToggler = document.querySelector("#chatbot-toggler")
 const closeChatbot = document.querySelector("#close-chatbot")
-// const { GEMINI_API_KEY , GEMINI_API_URL } = require("./config")
 
-// const API_KEY = GEMINI_API_KEY;
-// const API_URL = GEMINI_API_URL;
+fetch('/api/gemini-data')
+  .then(response => response.json())
+  .then(data => console.log(data.apiKey));
 
-
-const API_KEY = "AIzaSyC4Jwv2cvaS1IiyAjZjtdpKwNs1omlBbeE";
 const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
 const userData = {
