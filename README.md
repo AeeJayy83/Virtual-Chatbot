@@ -4,14 +4,13 @@
 Welcome to the ChatVerse , a Virtual Chatbot project! This chatbot allows users to have interactive and dynamic conversations with an AI-powered assistant, incorporating advanced features like image uploads, emoji-based responses, and context-aware conversations that build on past interactions.
 
 #### Front-end 🌐
-- **Technologies Used**: HTML, CSS, JavaScript
+- **Technologies Used**: HTML, CSS, JavaScript, Webpack bundler
 - **Features**:
   - 📱 **Responsive Design**: Optimized for various devices
   - 🔍 **User-friendly Interface**: For having fruitful conversation
   - 🤖 **3D-Model**: Integrated Sketchfab 3D robot model directly into the chat interface
  
 #### Back-end 🛠️
-- **Technologies Used**: Node.js, Express.js
 - **Features**:
   - 🧩 **GEMINI API**: Handles user interactions and generates responses
 
@@ -39,7 +38,7 @@ This virtual chatbot project showcases my proficiency in utilizing the DOM and i
 
 Before you start, make sure you have the following installed:
 
-Node.js (for backend server) and npm (for package management)
+npm (for package management)
 
 ## 1. Clone the repository
 
@@ -54,6 +53,7 @@ Run the following command to install all the required packages:
 
 ```shell
 npm install
+npm install --save-dev webpack webpack-cli webpack-dev-server
 ```
 
 ## 3. Start the server
@@ -61,7 +61,8 @@ npm install
 To run the chatbot locally, use the command:
 
 ```shell
-node server.js
+npm run build
+npm run start
 ```
 
 Visit http://127.0.0.1:5500/public/index.html in your browser to interact with the chatbot.

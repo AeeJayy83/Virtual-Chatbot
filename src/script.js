@@ -7,10 +7,7 @@ const fileCancelButton = document.querySelector("#file-cancel")
 const chatbotToggler = document.querySelector("#chatbot-toggler")
 const closeChatbot = document.querySelector("#close-chatbot")
 
-fetch('/api/gemini-data')
-  .then(response => response.json())
-  .then(data => console.log(data.apiKey));
-
+const API_KEY = process.env.GEMINI_API_KEY;
 const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
 const userData = {
@@ -41,14 +38,17 @@ const generateBotResponse = async (incomingMessageDiv) => {
         parts: [{ text: userData.message }, ...(userData.file.data ? [{ inline_data: userData.file }] : [])]
     })
 
-    //API req options
+
     const requestOptions = {
         method: "POST",
-        headers: { "Content-Type": "application/json", "X-goog-api-key": API_KEY },
+        headers: {
+            "Content-Type": "application/json",
+            "x-goog-api-key": API_KEY, 
+        },
         body: JSON.stringify({
-            contents: chatHistory
-        })
-    }
+            contents: chatHistory,
+        }),
+    };
 
     try {
         const response = await fetch(API_URL, requestOptions)
@@ -203,29 +203,29 @@ closeChatbot.addEventListener("click", () => chatverseLogo.style.fill = "#706db0
 
 
 const modelViewer = document.querySelector('#robot-viewer');
-modelViewer.addEventListener("click" , () => document.body.classList.toggle("show-chatbot"))
-modelViewer.addEventListener("click" , () => chatverseTitle.style.color = "#5350c4")
-modelViewer.addEventListener("click" , () => chatverseLogo.style.fill = "#5350c4")
+modelViewer.addEventListener("click", () => document.body.classList.toggle("show-chatbot"))
+modelViewer.addEventListener("click", () => chatverseTitle.style.color = "#5350c4")
+modelViewer.addEventListener("click", () => chatverseLogo.style.fill = "#5350c4")
 
 
-var typed = new Typed(".typing",{
-    strings:["","Chat with me....","Explore things by uploading an Image....","Have conversation with me using emojis.....","Tap on the bot to start the conversation...."],
-    typeSpeed:100,
-    BackSpeed:60,
-    loop:true
+var typed = new Typed(".typing", {
+    strings: ["", "Chat with me....", "Explore things by uploading an Image....", "Have conversation with me using emojis.....", "Tap on the bot to start the conversation...."],
+    typeSpeed: 100,
+    BackSpeed: 60,
+    loop: true
 })
 
 const chatverseTitle = document.querySelector(".chatverse-title")
 const chatverseInfo = document.querySelector(".typing")
 const chatverseLogo = document.querySelector(".chatverse-logo")
 
-chatverseTitle.addEventListener("mouseover" , () => {
+chatverseTitle.addEventListener("mouseover", () => {
     chatverseInfo.style.color = "#5a2bc1ff";
     chatverseLogo.style.fill = "#5350c4"
-    
+
 })
 
-chatverseTitle.addEventListener("mouseout" , () => {
+chatverseTitle.addEventListener("mouseout", () => {
     chatverseInfo.style.color = "initial";
     chatverseLogo.style.fill = "#706db0"
 })
